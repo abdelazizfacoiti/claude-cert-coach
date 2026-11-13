@@ -2,6 +2,10 @@
 
 A small [Claude Code](https://claude.com/claude-code) skill that helps you study for **Anthropic Claude certifications** while you use Claude. It's built to use as few tokens as possible.
 
+<p align="center">
+  <img src="docs/cert-coach-demo.png" alt="cert-coach in a real Claude Code session: after a quick question, /cert-coach spots a repeated rule and tells you to move it into CLAUDE.md. A random exam tip shows in the statusline below." width="860">
+</p>
+
 ## What it does
 
 | Feature | How it runs | Token cost |
@@ -10,11 +14,21 @@ A small [Claude Code](https://claude.com/claude-code) skill that helps you study
 | **`/cert-coach`**: one exam tip + one "do better" based on your current session | only when you type it, runs on Haiku | very small |
 | **`/cert-coach quiz`**: one multiple-choice question in exam style | only when you type it | very small |
 
-Example output:
-```
-🎓 [D6 Prompt&Context] Tip: structured output beats regex-parsing free text
-↗ Better: this session got long; run /compact or hand the search to a subagent
-```
+### Coaching on what you just did
+
+Use Claude as normal. When you want feedback, type `/cert-coach`. It compares what you just did against a short list of exam-relevant habits and gives you the matching exam domain plus one concrete fix. In the screenshot above, the rule "reply in British English, under 3 lines" was repeated in the prompt, so the coach points to **CLAUDE.md** (Claude Code domain) and says exactly what to add.
+
+The line at the bottom of the screenshot is the zero-cost statusline: a new exam tip each time it refreshes, with no model call.
+
+### Quick quiz
+
+<p align="center">
+  <img src="docs/cert-coach-quiz.png" alt="/cert-coach quiz asks one multiple-choice question tied to your session, then explains the answer" width="860">
+</p>
+
+`/cert-coach quiz` asks one multiple-choice question tied to what you were just doing, and explains the answer once you reply.
+
+> The screenshots are real captures from Claude Code (not mockups) and were taken with the `developer` track.
 
 ## Tracks
 
@@ -31,7 +45,7 @@ Architect Professional (CCAR-P) isn't included yet because its domains haven't b
 ## Install
 
 ```bash
-git clone <this-repo> && cd <repo>
+git clone https://github.com/abdelazizfacoiti/claude-cert-coach && cd claude-cert-coach
 ./install.sh               # skill only
 ./install.sh --statusline  # skill + zero-cost tip statusline (needs jq; replaces any existing statusLine)
 ```
@@ -63,6 +77,7 @@ cert-coach/
   statusline.sh     # prints a random tip for the active track
   config            # active track (gitignored, created by install.sh)
 install.sh
+docs/               # README screenshots
 ```
 
 ## Add a certification
