@@ -1,0 +1,7 @@
+Good prompt: goal, audience, format, constraints, examples
+Verify claims; ask Claude for sources and reasoning
+Save repeated context in a Project instead of retyping
+Redact sensitive data before pasting
+Bad result? Say exactly what's wrong and iterate
+Match the model/tool to the task
+Turn repeated tasks into templates

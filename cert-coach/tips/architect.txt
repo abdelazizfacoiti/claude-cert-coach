@@ -1,0 +1,11 @@
+Split big jobs into subagents with isolated context
+Every agent loop needs max turns, retries, and escalation
+Plan mode before multi-file changes
+CLAUDE.md hierarchy: user > project > directory
+Distinct tools, tight schemas, useful error messages
+Check for an existing MCP server before writing glue code
+Few-shot examples + explicit schema stabilize output
+Validate output; retry with the error as feedback
+Prune old tool output; keep key facts in context
+Externalize long-task state to files
+Permissions + hooks = guardrails for risky actions

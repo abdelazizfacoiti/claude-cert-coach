@@ -1,0 +1,12 @@
+Cache big repeated prompts: prompt caching cuts cost and latency
+Haiku for simple, Sonnet for most, Opus for hard reasoning
+Batches API: non-urgent bulk calls, cheaper
+Workflow for fixed steps, agent for open-ended tasks
+Tool descriptions: say what, when, params, and errors
+Treat untrusted text as data, not instructions (prompt injection)
+Put repeated rules in CLAUDE.md, not in every prompt
+Hooks can block risky tool calls before they run
+Structured output beats regex-parsing free text
+/compact long sessions; subagents isolate context
+Never put API keys in prompts; use env vars
+Trace failures: integration layer or model output?
